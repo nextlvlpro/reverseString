@@ -11,15 +11,18 @@ function genrateOutput (input) {
     //starting and ending points for loop
     let l = 0
     let r = data.length-1
-    let m = Math.floor(data.length/2)
-
     
     // This will loop in a way that first and last elemnt of string will be stored and it will move to the next element
-    while (l<m) {
+    while (l<=r) {
+
         output += data[r].split('').reverse().join('')+ " "
         r--
-        output += data[l] .split('').reverse().join('')+ " "
-        l++
+        if(l<r) {
+            output += data[l] .split('').reverse().join('')+ " "
+         l++
+        }
+        
+        
     }  
 
     // Output is printed on screen on Web Browser. Remove this line if you want to print results directly on terminal in node js.
